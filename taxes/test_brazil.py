@@ -33,3 +33,5 @@ def test_irpf():
   assert calculate_irpf(gross_salary_5, 1) == pytest.approx(228.82, rel=1e-6, abs=1e-2)
   assert calculate_irpf(gross_salary_6) == pytest.approx(368.23, rel=1e-6, abs=1e-2)
   assert calculate_irpf(gross_salary_6, 1) == pytest.approx(325.57, rel=1e-6, abs=1e-2)
+  assert calculate_irpf(gross_salary_7) == pytest.approx(1790.33, rel=1e-6, abs=1e-2)
+  assert calculate_irpf(gross_salary_7, 1) == pytest.approx(1738.20, rel=1e-6, abs=1e-2)
