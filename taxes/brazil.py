@@ -66,3 +66,6 @@ def calculate_irpf(gross_salary, dependants=0):
 
 def calculate_fgts(gross_salary):
   return gross_salary * 0.08
+
+def calculate_net_income(gross_salary, dependants=0):
+  return gross_salary - calculate_inss(gross_salary) - calculate_irpf(gross_salary, dependants)

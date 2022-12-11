@@ -1,6 +1,6 @@
 import pytest
 
-from taxes.brazil import calculate_inss, calculate_fgts, calculate_irpf
+from taxes.brazil import calculate_inss, calculate_fgts, calculate_irpf, calculate_net_income
 
 gross_salary_1 =    700.00
 gross_salary_2 =  1_500.00
@@ -35,3 +35,6 @@ def test_irpf():
   assert calculate_irpf(gross_salary_6, 1) == pytest.approx(325.57, rel=1e-6, abs=1e-2)
   assert calculate_irpf(gross_salary_7) == pytest.approx(1790.33, rel=1e-6, abs=1e-2)
   assert calculate_irpf(gross_salary_7, 1) == pytest.approx(1738.20, rel=1e-6, abs=1e-2)
+
+def test_net_income():
+  assert calculate_net_income(gross_salary_7, 1) == pytest.approx(7933.41, rel=1e-6, abs=1e-2)
